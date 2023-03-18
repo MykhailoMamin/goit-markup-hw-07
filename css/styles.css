@@ -533,21 +533,18 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.customers-link:hover,
-.customers-link:focus {
-  border-color: var(--primary-brand);
-  color: var(--primary-brand);
-}
-
 .customers-icon {
   display: block;
   width: 110px;
   height: 56px;
 
   fill: currentColor;
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.customers-link:hover,
+.customers-link:focus {
+  border-color: var(--primary-brand);
+  color: var(--primary-brand);
 }
 
 /* Footer */
@@ -706,12 +703,133 @@ img {
   height: 24px;
 }
 
-/* Modal */
+/* =========== Portfolio =========== */
+
+/* Works Button */
+
+.works-section {
+  padding: 48px 0;
+}
+
+.works-list {
+  display: flex;
+  column-gap: 28px;
+  margin-bottom: 48px;
+}
+
+@media screen and (max-width: 767px) {
+  .works-list {
+    flex-wrap: wrap;
+    row-gap: 16px;
+    justify-content: left;
+    padding-left: 16px;
+    margin-bottom: 48px;
+  }
+}
+
+.works-button {
+  padding: 8px 16px;
+  font-family: Roboto;
+  color: var(--primary-brand);
+  background-color: var(--first-bg-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  transition: color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function),
+    box-shadow 250ms var(--timing-function),
+    border-color 250ms var(--timing-function);
+}
+
+.works-button:hover,
+.works-button:focus {
+  color: var(--deafult-white-color);
+  background-color: var(--pressed-state);
+  border-color: transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* Card List */
+
+.card-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background: #4d5ae5;
+  opacity: 0;
+
+  transition: transform 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+  transform: translateY(100%);
+}
+
+.card-link:hover .card-overlay,
+.card-link:focus .card-overlay {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.card-content {
+  padding: 32px 16px;
+  border-bottom: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+}
+
+.card-text {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 296px;
+
+  color: var(--deafult-white-color);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.card-link {
+  display: block;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: box-shadow 250ms var(--timing-function);
+}
+
+.card-link:hover,
+.card-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+/* ======== Modal ======== */
 
 .backdrop {
   position: fixed;
   top: 0;
   left: 0;
+  padding: 20 0;
 
   width: 100%;
   height: 100%;
@@ -719,6 +837,7 @@ img {
   background: rgba(46, 47, 66, 0.4);
   transition: opacity 250ms var(--timing-function),
     visibility 250ms var(--timing-function);
+  overflow-y: scroll;
 }
 
 .backdrop.is-hidden {
@@ -732,9 +851,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  min-width: 408px;
-  min-height: 576px;
+  width: 100%;
+  max-width: 394px;
   padding: 72px 24px 24px 24px;
 
   background-color: #fff;
@@ -767,7 +885,7 @@ img {
 }
 .button-icon:hover,
 .button-icon:focus {
-  background-color: var(--accent);
+  background-color: var(--primary-brand);
   fill: var(--deafult-white-color);
 }
 
@@ -817,7 +935,7 @@ img {
 }
 
 .form-input:focus {
-  border: 1px solid var(--accent);
+  border: 1px solid var(--primary-brand);
 }
 
 .input-icon {
@@ -841,7 +959,7 @@ img {
 }
 
 .form-input:focus + .form-icon {
-  fill: var(--accent);
+  fill: var(--primary-brand);
 }
 
 .textarea {
@@ -870,7 +988,7 @@ img {
 }
 
 .form-textarea:focus {
-  border: 1px solid var(--accent);
+  border: 1px solid var(--primary-brand);
 }
 
 .form-check {
@@ -902,7 +1020,7 @@ img {
 }
 
 .link {
-  color: var(--accent);
+  color: var(--primary-brand);
   margin-left: 4px;
 }
 
@@ -918,7 +1036,7 @@ img {
 
 .checkbox:checked + .checkbox-icon {
   background-image: url('../images/checkbox1.svg');
-  background-color: var(--accent);
+  background-color: var(--primary-brand);
   background-size: contain;
   background-origin: border-box;
   border: transparent;
