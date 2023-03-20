@@ -904,7 +904,6 @@ img {
   .footer-content {
     flex-wrap: wrap;
     column-gap: 24px;
-    justify-content: center;
   }
 }
 
@@ -1010,12 +1009,6 @@ img {
 }
 
 /* Footer Form */
-
-@media (min-width: 768px) and (max-width: 1157px) {
-  .form {
-    margin-left: -43px;
-  }
-}
 
 .form-field {
   display: flex;
