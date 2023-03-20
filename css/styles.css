@@ -257,6 +257,10 @@ img {
   .address {
     margin-left: 100px;
   }
+
+  .contact-list .item:first-child{
+    padding-bottom: 12px;
+  }
 }
 
 /* Desktop Navigation */
@@ -661,6 +665,11 @@ img {
 /* Tablet Advant */
 
 @media screen and (min-width: 768px) and (max-width: 1157px) {
+  .section-advant {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
   .list-advant.list {
     display: flex;
     flex-wrap: wrap;
