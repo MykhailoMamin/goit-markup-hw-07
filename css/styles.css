@@ -1364,7 +1364,7 @@ img {
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 394px;
-  padding: 72px 24px 10px 24px;
+  padding: 72px 24px 24px 24px;
 
   background-color: #fff;
   border-radius: 4px;
